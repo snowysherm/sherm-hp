@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+}
+
+.title h1 {
+    margin: auto;
+}
+
+.title {
+    padding: 60px;
+    text-align: center;
+    background: #0095ff;
+    color: white;
+    font-size: 25px;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    border-top: 2px solid #000;
+    margin: 10px 0;
+}
+
+.post p {
+    width: 50vw;
+}
