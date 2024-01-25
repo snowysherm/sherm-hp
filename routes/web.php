@@ -19,6 +19,6 @@ Route::get('/', function () {
 });
 
 Route::prefix('medal')->group(function () {
-    Route::get('/', [MedalController::class, 'index'])->name('medal.index');
+    Route::get('/', [MedalController::class, 'fetchClip'])->name('medal.index');
 });
 

@@ -11,15 +11,27 @@ class MedalController extends Controller
         return view('medal.index');
     }
 
-    public function fetchClip() {
+    public function fetchClip()
+    {
+        $categoryId = 165;
+        $userId     = 50766636;
+
+        $params = ['limit' => 10];
+
+        if ($categoryId) {
+            $params['categoryId'] = $categoryId;
+        }
+        if ($userId) {
+            $params['userId']     = $userId;
+        }
+
         $response = Http::withHeaders([
-            'Authorization' => 'pub_SAZBDxGFLxdcP6WfkZz72jddrvThqn3n',
-        ])->get('https://developers.medal.tv/v1/trending', [
-            'categoryId' => 62,
-            'limit' => 1
-        ]);
+            'Authorization' => 'pub_gYGBoIPUjWrqNScWK2wuIS8jLgmRwVfR',
+        ])->get('https://developers.medal.tv/v1/latest', $params);
 
         $jsonResponse = $response->json();
-        return $jsonResponse['contentObjects'][0];
+        $clips        = $jsonResponse['contentObjects'];
+
+        return view('medal.index', compact('clips'));
     }
 }
