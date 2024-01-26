@@ -8,8 +8,6 @@
     <div class="post container">
         <h2>{{ $post->title }}</h2>
         <p>{{ $post->post }}</p>
-    </div>
-    <div>
         <button class="button button-delete">
             <a class="unstyled-link" href="{{ route('home.delete', $post) }}">Löschen</a>
         </button>

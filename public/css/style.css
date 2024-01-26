@@ -2,6 +2,13 @@ body {
     font-family: sans-serif;
 }
 
+div.post:not(:last-of-type):after {
+    content: "";
+    display: block;
+    border-top: 2px solid #000;
+    margin: 10px 0;
+}
+
 /* GENERAL HELPER */
 .unstyled-link {
     text-decoration: none;
