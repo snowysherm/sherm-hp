@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MedalController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::prefix('/')->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+    Route::get('edit', [HomeController::class, 'edit'])->name('home.edit');
+    Route::post('store', [HomeController::class, 'store'])->name('home.store');
 });
 
 Route::prefix('medal')->group(function () {

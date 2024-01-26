@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sherm</title>
     <div class="title">
-        <h1>sherm</h1>
+        <a href="{{ route('home.index') }}" class="unstyled-link"><h1>sherm</h1></a>
         <p>because everyone needs a sherm in their life</p>
     </div>
 </head>
