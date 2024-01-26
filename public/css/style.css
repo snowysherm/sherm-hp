@@ -9,9 +9,11 @@ body {
 }
 
 /* HEADER */
+/* NAVIGATION */
 div.nav ul {
     list-style-type: none;
-    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
@@ -36,9 +38,13 @@ div.nav li a:hover:not(.active) {
 div.nav .active {
     background-color: #0095ff;
 }
-
+/* TITLE */
 .title h1 {
     margin: auto;
+}
+
+div.title p {
+    margin: 0;
 }
 
 .title {
@@ -48,19 +54,12 @@ div.nav .active {
     color: white;
     font-size: 25px;
 }
-
+/* FOOTER */
 .footer-title {
     text-align: center;
 }
 
 .footer-title::before {
-    content: "";
-    display: block;
-    border-top: 2px solid #000;
-    margin: 10px 0;
-}
-
-.title::after {
     content: "";
     display: block;
     border-top: 2px solid #000;
