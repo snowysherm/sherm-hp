@@ -19,6 +19,7 @@ Route::prefix('/')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home.index');
     Route::get('edit', [HomeController::class, 'edit'])->name('home.edit');
     Route::post('store', [HomeController::class, 'store'])->name('home.store');
+    Route::get('delete/{post}', [HomeController::class, 'delete'])->name('home.delete');
 });
 
 Route::prefix('medal')->group(function () {

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\HomepagePosts;
+use App\Models\HomepagePost;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $posts = HomepagePosts::all();
+        $posts = HomepagePost::all();
+
         return view('home.home', compact('posts'));
     }
 
@@ -20,11 +21,18 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        $post        = new HomepagePosts();
+        $post        = new HomepagePost();
         $post->post  = $request->post;
         $post->title = $request->title;
         $post->save();
 
         return redirect(route('home.index'))->with('success', 'erfolgreich angelegt');
+    }
+
+    public function delete(HomepagePost $post)
+    {
+        $post->delete();
+
+        return redirect(route('home.index'))->with('success', 'erfolgreich gelöscht');
     }
 }

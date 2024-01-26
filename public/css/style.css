@@ -8,6 +8,23 @@ body {
     color: inherit;
 }
 
+.button {
+    background-color: #0095ff;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 4px;
+}
+
+.button-delete {
+    background-color: red;
+}
+
 /* HEADER */
 /* NAVIGATION */
 div.nav ul {
