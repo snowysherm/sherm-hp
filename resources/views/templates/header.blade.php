@@ -14,3 +14,9 @@
     </div>
 </head>
 <body>
+<div class="nav">
+    <ul>
+        <li><a href="{{ route('home.index') }}" class="{{ Route::currentRouteName() === 'home.index' ? 'active' : '' }}">Home</a></li>
+        <li><a href="{{ route('medal.index') }}" class="{{ Route::currentRouteName() === 'medal.index' ? 'active' : '' }}">Medal Clips</a></li>
+    </ul>
+</div>
