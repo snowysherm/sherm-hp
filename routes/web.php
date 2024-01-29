@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoreController;
 use App\Http\Controllers\MedalController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,9 @@ Route::prefix('/')->group(function () {
 
 Route::prefix('medal')->group(function () {
     Route::get('/', [MedalController::class, 'fetchClip'])->name('medal.index');
+});
+
+Route::prefix('lore')->group(function () {
+    Route::get('/', [LoreController::class, 'index'])->name('lore.index');
 });
 

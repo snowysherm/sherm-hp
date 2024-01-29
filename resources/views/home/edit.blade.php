@@ -8,7 +8,7 @@
     <input type="text" id="title" name="title"><br><br>
     <label for="post">Post:</label><br>
     <textarea id="post" name="post"></textarea><br><br>
-    <input type="submit" value="Submit">
+    <input class="button" type="submit" value="Submit">
 </form>
 
 @include('templates.footer')

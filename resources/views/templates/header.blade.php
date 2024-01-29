@@ -18,5 +18,8 @@
     <ul>
         <li><a href="{{ route('home.index') }}" class="{{ Route::currentRouteName() === 'home.index' ? 'active' : '' }}">Home</a></li>
         <li><a href="{{ route('medal.index') }}" class="{{ Route::currentRouteName() === 'medal.index' ? 'active' : '' }}">Medal Clips</a></li>
+        <li><a href="{{ route('lore.index') }}" class="{{ Route::currentRouteName() === 'lore.index' ? 'active' : '' }}">Lore</a></li>
+        <li><a href="https://www.discord.com/invite/jqxNzRY">Discord</a></li>
     </ul>
 </div>
+<main>
