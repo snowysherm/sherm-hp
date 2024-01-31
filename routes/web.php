@@ -37,6 +37,10 @@ Route::prefix('medal')->group(function () {
 
 Route::prefix('lore')->group(function () {
     Route::get('/', [LoreController::class, 'index'])->name('lore.index');
+    Route::get('/', [LoreController::class, 'index'])->name('lore.index');
+    Route::get('edit', [LoreController::class, 'edit'])->name('lore.edit');
+    Route::post('store', [LoreController::class, 'store'])->name('lore.store');
+    Route::get('delete/{lore}', [LoreController::class, 'delete'])->name('lore.delete');
 });
 
 require __DIR__.'/auth.php';
