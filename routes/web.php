@@ -3,7 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoreController;
 use App\Http\Controllers\MedalController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RomanCalculatorController;use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +21,11 @@ Route::prefix('/')->group(function () {
     Route::get('edit', [HomeController::class, 'edit'])->name('home.edit');
     Route::post('store', [HomeController::class, 'store'])->name('home.store');
     Route::get('delete/{post}', [HomeController::class, 'delete'])->name('home.delete');
+});
+
+Route::prefix('roman-calculator')->group(function () {
+    Route::get('/', [RomanCalculatorController::class, 'index'])->name('romanCalculator.index');
+    Route::any('/calculated', [RomanCalculatorController::class, 'calculateNumber'])->name('romanCalculator.calculate');
 });
 
 Route::prefix('medal')->group(function () {
