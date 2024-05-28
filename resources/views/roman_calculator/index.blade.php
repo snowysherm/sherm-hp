@@ -1,5 +1,11 @@
 @include('templates.header')
 
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <p style="color: red">{{ $error }}</p>
+    @endforeach
+@endif
+
 <form method="POST" action="{{ route('romanCalculator.calculate') }}">
     @csrf
     <label for="decimal">Dezimal Eingabe von 1-1000:</label><br>
