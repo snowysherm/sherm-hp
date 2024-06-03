@@ -18,4 +18,7 @@
     {{ $romanNumber }}
 @endif
 
+<p>View my Code for this "Project" (Via GitHub API):</p>
+<pre>{!! nl2br(e($romanCalculatorCode)) !!}</pre>
+
 @include('templates.footer')

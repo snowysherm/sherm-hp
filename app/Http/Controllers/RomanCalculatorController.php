@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\GithubCodeFetchService;
 use Illuminate\Http\Request;
 
 class RomanCalculatorController extends Controller
@@ -11,7 +12,10 @@ class RomanCalculatorController extends Controller
 
     public function index()
     {
-        return view('roman_calculator.index');
+        $romanCalculatorCodeService = new GithubCodeFetchService('app/Http/Controllers/RomanCalculatorController.php');
+        $romanCalculatorCode = $romanCalculatorCodeService->returnFileContent();
+
+        return view('roman_calculator.index', compact('romanCalculatorCode'));
     }
 
     public function calculateNumber(Request $request)
