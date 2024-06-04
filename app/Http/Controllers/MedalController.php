@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Http;
+use App\Http\Services\MedalApiService;
 
 class MedalController extends Controller
 {
@@ -13,24 +13,8 @@ class MedalController extends Controller
 
     public function fetchClip()
     {
-        $categoryId = 165;
-        $userId     = 50766636;
-
-        $params = ['limit' => 10];
-
-        if ($categoryId) {
-            $params['categoryId'] = $categoryId;
-        }
-        if ($userId) {
-            $params['userId']     = $userId;
-        }
-
-        $response = Http::withHeaders([
-            'Authorization' => 'pub_gYGBoIPUjWrqNScWK2wuIS8jLgmRwVfR',
-        ])->get('https://developers.medal.tv/v1/latest', $params);
-
-        $jsonResponse = $response->json();
-        $clips        = $jsonResponse['contentObjects'];
+        $medalApiService = new MedalApiService(apiKey: config('variables.MEDAL_API_KEY'), categoryId: 165, userId: 50766636);
+        $clips           = $medalApiService->returnClips();
 
         return view('medal.index', compact('clips'));
     }
