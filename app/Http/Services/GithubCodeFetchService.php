@@ -25,9 +25,7 @@ class GithubCodeFetchService
 
         $returnResponse = $request->json();
 
-        $decodedResponse = base64_decode($returnResponse['content']);
-
-        return $decodedResponse;
+        return base64_decode($returnResponse['content']);
     }
 
 }
